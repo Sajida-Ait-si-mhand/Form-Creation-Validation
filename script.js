@@ -11,22 +11,22 @@ const feedbackDiv = document.getElementById('form-feedback');
         const password = document.getElementById('password').value.trim();
         
 		let isValid = true;
-		let message = [];
+		let messages = [];
 
 		if (username.length < 3)
 		{
 			isValid = false;
-			message.push('The username has to be more than 3 characters');
+			messages.push('The username has to be more than 3 characters');
 		}
 		if (!email.includes('@') || !email.includes('.'))
 		{
 			isValid = false;
-			message.push('Please enter the right email');
+			messages.push('Please enter the right email');
 		}
 		if (password.length < 8)
 		{
 			isValid = false;
-			message.push('You need a strong password')
+			messages.push('You need a strong password');
 		}
 		feedbackDiv.style.display = "block";
 		if (isValid)
@@ -35,7 +35,7 @@ const feedbackDiv = document.getElementById('form-feedback');
             feedbackDiv.style.color = "#28a745";
 		}
 		else{
-			feedbackDiv.innerHTML = message.join('<br>');
+			feedbackDiv.innerHTML = messages.join('<br>');
             feedbackDiv.style.color = "#dc3545";
 		}
 	});

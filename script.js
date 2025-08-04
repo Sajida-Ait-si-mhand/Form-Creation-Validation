@@ -26,7 +26,7 @@ const feedbackDiv = document.getElementById('form-feedback');
 		if (password.length < 8)
 		{
 			isValid = false;
-			message.push('You need a strong passwprd')
+			message.push('You need a strong password')
 		}
 		feedbackDiv.style.display = "block";
 		if (isValid)
@@ -35,8 +35,9 @@ const feedbackDiv = document.getElementById('form-feedback');
             feedbackDiv.style.color = "#28a745";
 		}
 		else{
-			feedbackDiv.innerHTML = messages.join('<br>');
+			feedbackDiv.innerHTML = message.join('<br>');
             feedbackDiv.style.color = "#dc3545";
 		}
 	});
 });
+
